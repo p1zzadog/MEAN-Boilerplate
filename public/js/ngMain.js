@@ -7,7 +7,7 @@ angular.module('bpApp')
 		function($routeProvider){
 			$routeProvider.when('/', {
 				templateUrl : './html/views/home.html',
-				controller  : 'mainController as main'
+				controller  : 'mainController as mainCtrl'
 			})
 		}
 	]);
@@ -15,9 +15,10 @@ angular.module('bpApp')
 // mainController
 angular.module('bpApp')
 	.controller('mainController', ['$http', function($http){
-		console.log('view loaded!')
+		console.log('view loaded!');
+		var mainCtrl = this;
 		// this. = mainController $scope
-		this.controllerAsTest = function(){
-			console.log('controllerAsTest!')
+		mainCtrl.controllerAsTest = function(){
+			console.log('controllerAsTest!');
 		}
 	}]);

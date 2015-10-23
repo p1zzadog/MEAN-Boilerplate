@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var makeItUgly = require('gulp-uglify');
+var min = require('gulp-minify-css')
 
 
 gulp.task('default', function(){
@@ -17,7 +18,7 @@ gulp.task('build-js', function(){
 gulp.task('build-css', function(){
 	gulp.src('./public/css/**/*.css')
 	.pipe(concat('allcss.css'))
-	.pipe(makeItUgly())
+	.pipe(min())
 	.pipe(gulp.dest('./public/dest/css'));
 });
 
